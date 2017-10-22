@@ -5,17 +5,32 @@ import org.slf4j.LoggerFactory;
 
 public class IntegerTest {
     
-    private static final Logger LOGGER = LoggerFactory.getLogger(IntegerTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(IntegerTest.class);
+    
+    private Integer iTest;
+    
+    public Integer getiTest() {
+        return iTest;
+    }
+
+    public void setiTest(Integer iTest) {
+        this.iTest = iTest;
+    }
+
+    @Override
+    public String toString() {
+        return "IntegerTest [iTest=" + iTest + "]";
+    }
 
     public static void main(String[] args) {
         
         Integer i1 = -100;
         Integer i2 = 100;
         Boolean b = (i1 == i2);
-        LOGGER.debug(b.toString());
+        LOG.debug(b.toString());
         
-        int i = (Integer) null;
-        LOGGER.debug(Integer.toString(i));
+        IntegerTest integerTest = new IntegerTest();
+        integerTest.setiTest(null);
+        LOG.debug("{}", integerTest);
     }
-
 }

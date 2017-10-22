@@ -1,4 +1,4 @@
-package com.hellozjf.collection;
+package com.hellozjf.test.collection;
 
 import java.util.HashMap;
 import java.util.Map;
