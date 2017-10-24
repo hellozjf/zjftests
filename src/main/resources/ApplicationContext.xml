@@ -4,16 +4,24 @@
     xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
 		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.0.xsd"
     default-autowire="autodetect">
-    <aop:config>
-        <aop:aspect id="aspect" ref="aspectBean">
-            <!--配置com.lzq.spring.service包下所有类或接口的所有方法 -->
-            <aop:pointcut id="logService"
-                expression="execution(* com.hellozjf.test.aop.service.*.*(..))" />
-            <aop:before pointcut-ref="logService" method="doBefore" />
-            <aop:after pointcut-ref="logService" method="doAfter" />
-            <aop:around pointcut-ref="logService" method="doAround" />
-        </aop:aspect>
-    </aop:config>
-    <bean id="aspectBean" class="com.lzq.spring.aop.Aspect" />
-    <bean id="aService" class="com.lzq.spring.service.AServiceImpl" />
+<!--     <aop:config> -->
+<!--         <aop:aspect id="aspect" ref="aspectBean"> -->
+<!--             配置com.lzq.spring.service包下所有类或接口的所有方法 -->
+<!--             <aop:pointcut id="logService" -->
+<!--                 expression="execution(* com.hellozjf.test.aop.service.*.*(..))" /> -->
+<!--             <aop:before pointcut-ref="logService" method="doBefore" /> -->
+<!--             <aop:after pointcut-ref="logService" method="doAfter" /> -->
+<!--             <aop:around pointcut-ref="logService" method="doAround" /> -->
+<!--         </aop:aspect> -->
+<!--     </aop:config> -->
+<!--     <bean id="aspectBean" class="com.lzq.spring.aop.Aspect" /> -->
+<!--     <bean id="aService" class="com.lzq.spring.service.AServiceImpl" /> -->
+
+    <bean id="properties" class="java.util.Properties">
+        <constructor-arg>
+            <props>
+                <prop key="hello">world</prop>
+            </props>
+        </constructor-arg>
+    </bean>
 </beans>
